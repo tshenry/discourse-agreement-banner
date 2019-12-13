@@ -1,0 +1,27 @@
+<div class="agree-banner">
+	<div class="container">
+		<div class="banner-header">
+			<h2>
+				{{theme-i18n "agree_banner.heading"}}
+			</h2>
+		</div>
+		<div class="terms">
+			{{{theme-setting 'agree_banner_terms'}}}
+		</div>
+		<div class="banner-controls">
+			<label>
+				{{input type="checkbox" checked=canContinue}} {{theme-i18n
+				"agree_banner.checkbox_label"}}
+				<div class="checkbox-reminder hidden">
+					{{d-icon "long-arrow-alt-left"}}
+					<span class="checkbox-reminder-text">
+						{{theme-i18n "agree_banner.checkbox_reminder"}}
+					</span>
+				</div>
+			</label>
+			{{d-button action=(action "agree") label=(theme-prefix
+			'agree_banner.submit_button')}}
+		</div>
+	</div>
+</div>
+{{overlay}}

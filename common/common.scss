@@ -1,0 +1,128 @@
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+html.must-agree {
+  overflow: hidden;
+
+  .agree-banner {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: $primary-very-low;
+    z-index: 2001;
+
+    .banner-header {
+      margin-bottom: 20px;
+    }
+
+    .terms {
+      background-color: $secondary;
+      color: $primary;
+      max-height: 100px;
+      border: 1px solid #121212;
+      overflow-y: scroll;
+      padding: 50px 80px;
+    }
+
+    .banner-controls {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+
+      label {
+        font-weight: bold;
+
+        .checkbox-reminder {
+          display: flex;
+          align-items: center;
+          color: red;
+          font-weight: bold;
+          margin-left: 10px;
+
+          &.hidden {
+            display: none;
+          }
+
+          .d-icon {
+            font-size: 1.25em;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+    overflow: hidden;
+  }
+
+  // Make the banner to "shake" and "dim" the rest of the page
+  &.clarify {
+    .agree-banner {
+      animation: shake 0.3s;
+      animation-iteration-count: 1;
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+html.must-agree.mobile-device {
+  position: fixed;
+  .agree-banner {
+    .terms {
+      max-height: 25vh;
+      padding: 15px 10px;
+      box-shadow: inset 0px -21px 8px -10px #ccc;
+    }
+    .banner-controls {
+      label {
+        align-items: center;
+        .checkbox-reminder {
+          .d-icon {
+            font-size: 1.5em;
+          }
+          .checkbox-reminder-text {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Theme setting color overrides
+html.must-agree .agree-banner {
+  background-color: $agree_banner_background_color;
+  color: $agree_banner_text_color;
+  .terms {
+    background-color: $agree_banner_terms_background_color;
+    color: $agree_banner_terms_text_color;
+  }
+}

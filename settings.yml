@@ -1,0 +1,23 @@
+agree_banner_terms:
+  type: string
+  textarea: true
+  default: "Enter HTML-formatted terms here"
+  description:
+    en:
+      "Terms can be formatted with HTML. You can also create a separate component to handle CSS if needed.
+      <br><br><br>
+      <h2>Color Overrides</h2>
+      For your convenience, the most relevant color overrides are included below. It is common practice to
+      use hexadecimal colors, however, you can use any CSS-compatiblle color value."
+agree_banner_background_color:
+  type: string
+  default: ""
+agree_banner_text_color:
+  type: string
+  default: ""
+agree_banner_terms_background_color:
+  type: string
+  default: ""
+agree_banner_terms_text_color:
+  type: string
+  default: ""

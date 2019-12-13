@@ -1,0 +1,6 @@
+en:
+  agree_banner:
+    heading: "Please accept the terms and conditions to continue"
+    checkbox_label: "I agree"
+    checkbox_reminder: "You must agree to continue"
+    submit_button: "Submit"
