@@ -7,7 +7,7 @@ export default {
       let store = container.lookup("key-value-store:main");
 
       if (currentUser && !store.get("showAgreementBanner")) {
-        document.querySelector("html").classList.add("must-agree");
+        document.documentElement.classList.add("must-agree");
       }
     });
   }

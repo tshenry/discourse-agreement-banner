@@ -1,5 +1,7 @@
 export default Ember.Component.extend({
   click() {
-    document.querySelector("html").classList.add("clarify");
+    window.scrollTo(0, 0);
+    document.documentElement.classList.add("clarify");
+    return false;
   }
 });

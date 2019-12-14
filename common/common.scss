@@ -27,7 +27,10 @@ html.must-agree {
     margin-bottom: 20px;
     padding: 20px;
     background-color: $primary-very-low;
-    z-index: 2001;
+    background-color: $agree_banner_background_color;
+    color: $primary;
+    color: $agree_banner_text_color;
+    z-index: z("modal", "content");
 
     .banner-header {
       margin-bottom: 20px;
@@ -35,9 +38,11 @@ html.must-agree {
 
     .terms {
       background-color: $secondary;
+      background-color: $agree_banner_terms_background_color;
       color: $primary;
+      color: $agree_banner_terms_text_color;
       max-height: 100px;
-      border: 1px solid #121212;
+      border: 1px solid $primary;
       overflow-y: scroll;
       padding: 50px 80px;
     }
@@ -48,14 +53,13 @@ html.must-agree {
       justify-content: space-between;
       align-items: baseline;
 
-      label {
-        font-weight: bold;
+      .reminder-label {
+        font-weight: 700;
 
         .checkbox-reminder {
           display: flex;
           align-items: center;
-          color: red;
-          font-weight: bold;
+          color: $danger;
           margin-left: 10px;
 
           &.hidden {
@@ -77,7 +81,7 @@ html.must-agree {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 2000;
+    z-index: z("modal", "overlay");
     overflow: hidden;
   }
 
@@ -102,11 +106,11 @@ html.must-agree.mobile-device {
       box-shadow: inset 0px -21px 8px -10px #ccc;
     }
     .banner-controls {
-      label {
+      .reminder-label {
         align-items: center;
         .checkbox-reminder {
           .d-icon {
-            font-size: 1.5em;
+            font-size: $font-up-3;
           }
           .checkbox-reminder-text {
             display: none;
@@ -114,15 +118,5 @@ html.must-agree.mobile-device {
         }
       }
     }
-  }
-}
-
-// Theme setting color overrides
-html.must-agree .agree-banner {
-  background-color: $agree_banner_background_color;
-  color: $agree_banner_text_color;
-  .terms {
-    background-color: $agree_banner_terms_background_color;
-    color: $agree_banner_terms_text_color;
   }
 }

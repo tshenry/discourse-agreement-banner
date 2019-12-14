@@ -1,15 +1,16 @@
-//import showModal from "discourse/lib/show-modal";
 export default Ember.Component.extend({
+  canContinue: null,
   actions: {
     agree() {
       if (this.canContinue) {
-        document.querySelector(".agree-banner-connector").remove();
-        document
-          .querySelector("html")
-          .classList.remove("must-agree", "clarify");
-        this.keyValueStore.set({ key: "showAgreementBanner", value: "false" });
+        this.element.remove();
+        document.documentElement.classList.remove("must-agree", "clarify");
+        this.keyValueStore.set({ key: "showAgreementBanner", value: "no" });
       } else {
-        document.querySelector(".checkbox-reminder").classList.remove("hidden");
+        let $reminder = this.element.querySelector(".checkbox-reminder");
+        if ($reminder) {
+          $reminder.classList.remove("hidden");
+        }
       }
     }
   }
