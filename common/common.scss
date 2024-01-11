@@ -20,16 +20,16 @@
 }
 
 @if ($agree_banner_background_color == "") {
-  $agree_banner_background_color: $primary-very-low;
+  $agree_banner_background_color: var(--primary-very-low);
 }
 @if ($agree_banner_text_color == "") {
-  $agree_banner_text_color: $primary;
+  $agree_banner_text_color: var(--primary);
 }
 @if ($agree_banner_terms_background_color == "") {
-  $agree_banner_terms_background_color: $secondary;
+  $agree_banner_terms_background_color: var(--secondary);
 }
 @if ($agree_banner_terms_text_color == "") {
-  $agree_banner_terms_text_color: $primary;
+  $agree_banner_terms_text_color: var(--primary);
 }
 
 html.must-agree {
@@ -51,7 +51,7 @@ html.must-agree {
       background-color: $agree_banner_terms_background_color;
       color: $agree_banner_terms_text_color;
       max-height: 100px;
-      border: 1px solid $primary;
+      border: 1px solid var(--primary);
       overflow-y: scroll;
       padding: 50px 80px;
     }
@@ -68,7 +68,7 @@ html.must-agree {
         .checkbox-reminder {
           display: flex;
           align-items: center;
-          color: $danger;
+          color: var(--danger);
           margin-left: 10px;
 
           &.hidden {
