@@ -92,6 +92,10 @@ html.must-agree {
     overflow: hidden;
   }
 
+  .d-header-wrap {
+    pointer-events: none;
+  }
+
   // Make the banner to "shake" and "dim" the rest of the page
   &.clarify {
     .agree-banner {
@@ -102,14 +106,13 @@ html.must-agree {
       background: rgba(0, 0, 0, 0.2);
     }
     .d-header-wrap {
-      pointer-events: none;
       filter: brightness(80%);
     }
   }
 }
 
 html.must-agree.mobile-device {
-  position: fixed;
+  overflow: hidden;
   .agree-banner {
     .terms {
       max-height: 25vh;
