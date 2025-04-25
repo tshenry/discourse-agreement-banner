@@ -33,15 +33,13 @@
 }
 
 html.must-agree {
-  overflow: hidden;
-
   .agree-banner {
     position: relative;
     margin-bottom: 20px;
     padding: 20px;
     background-color: $agree_banner_background_color;
     color: $agree_banner_text_color;
-    z-index: z("modal", "content");
+    z-index: z("header") - 1;
 
     .banner-header {
       margin-bottom: 20px;
@@ -90,7 +88,7 @@ html.must-agree {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: z("modal", "overlay");
+    z-index: z("header") - 2;
     overflow: hidden;
   }
 
@@ -102,6 +100,10 @@ html.must-agree {
     }
     .overlay {
       background: rgba(0, 0, 0, 0.2);
+    }
+    .d-header-wrap {
+      pointer-events: none;
+      filter: brightness(80%);
     }
   }
 }

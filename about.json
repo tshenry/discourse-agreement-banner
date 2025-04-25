@@ -1,6 +1,6 @@
 {
   "name": "Agree Banner",
   "about_url": null,
-  "license_url": null,
+  "license_url": "https://github.com/tshenry/discourse-agreement-banner/blob/main/LICENSE",
   "component": true
 }

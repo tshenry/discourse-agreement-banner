@@ -5,7 +5,7 @@ agree_banner_terms:
   description:
     en: "Terms can be formatted with HTML. You can also create a separate component to handle CSS if needed."
 svg_icons:
-  default: "long-arrow-alt-left"
+  default: "left-long"
   type: "list"
   list_type: "compact"
   description:
